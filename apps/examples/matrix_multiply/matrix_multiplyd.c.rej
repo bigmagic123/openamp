@@ -1,0 +1,11 @@
+--- apps/examples/matrix_multiply/matrix_multiplyd.c
++++ apps/examples/matrix_multiply/matrix_multiplyd.c
+@@ -158,7 +175,7 @@ int main(int argc, char *argv[])
+ 			LPERROR("Failed to create rpmsg virtio device.\r\n");
+ 			ret = -1;
+ 		} else {
+-			app(rpdev, platform);
++			matrix_multiplyd_app(rpdev, platform);
+ 			platform_release_rpmsg_vdev(rpdev, platform);
+ 			ret = 0;
+ 		}

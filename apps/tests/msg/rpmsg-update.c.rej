@@ -1,0 +1,11 @@
+--- apps/tests/msg/rpmsg-update.c
++++ apps/tests/msg/rpmsg-update.c
+@@ -139,7 +156,7 @@ int main(int argc, char *argv[])
+ 			LPERROR("Failed to create rpmsg virtio device.\r\n");
+ 			ret = -1;
+ 		} else {
+-			app(rpdev, platform);
++			rpmsg_update_app(rpdev, platform);
+ 			platform_release_rpmsg_vdev(rpdev, platform);
+ 			ret = 0;
+ 		}
